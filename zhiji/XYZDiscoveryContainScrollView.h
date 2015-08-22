@@ -15,10 +15,12 @@
     UITableView *leftTableView;
     UITableView *middleTableView;
     UITableView *rightTableView;
+    UIImageView *advertiseImageView;
 }
 
 @property (strong, nonatomic) UITableView *leftTableView;
 @property (strong, nonatomic) UITableView *middleTableView;
 @property (strong, nonatomic) UITableView *rightTableView;
+@property (strong, nonatomic) UIImageView *advertiseImageView;
 
 @end

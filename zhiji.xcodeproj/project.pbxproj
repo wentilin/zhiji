@@ -12,6 +12,9 @@
 		2001BA361B7B709800F29031 /* XYZTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2001BA351B7B709800F29031 /* XYZTopicViewController.m */; };
 		2001BA831B7C514000F29031 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2001BA821B7C514000F29031 /* Assets.xcassets */; };
 		2001BA861B7C666500F29031 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2001BA851B7C666500F29031 /* DiscoveryViewController.m */; };
+		202BE0921B84F2CF00F6358C /* NSAttributedString+ExtendMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 202BE0911B84F2CF00F6358C /* NSAttributedString+ExtendMethods.m */; };
+		202BE0961B8629C500F6358C /* XYZDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 202BE0951B8629C500F6358C /* XYZDeleteCellView.m */; };
+		202BE0991B874F0700F6358C /* XYZCustomRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 202BE0981B874F0700F6358C /* XYZCustomRefreshControl.m */; };
 		205F40361B83130400C86346 /* XYZDiscoveryContainScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F40351B83130400C86346 /* XYZDiscoveryContainScrollView.m */; };
 		20980DE21B8207DA0099A72F /* answer.html in Resources */ = {isa = PBXBuildFile; fileRef = 20980DE11B8207DA0099A72F /* answer.html */; };
 		20A9A8871B78A6B50036D43F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A9A8861B78A6B50036D43F /* main.m */; };
@@ -52,6 +55,12 @@
 		2001BA821B7C514000F29031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2001BA841B7C666500F29031 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
 		2001BA851B7C666500F29031 /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		202BE0901B84F2CF00F6358C /* NSAttributedString+ExtendMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+ExtendMethods.h"; sourceTree = "<group>"; };
+		202BE0911B84F2CF00F6358C /* NSAttributedString+ExtendMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+ExtendMethods.m"; sourceTree = "<group>"; };
+		202BE0941B8629C500F6358C /* XYZDeleteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDeleteCellView.h; sourceTree = "<group>"; };
+		202BE0951B8629C500F6358C /* XYZDeleteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDeleteCellView.m; sourceTree = "<group>"; };
+		202BE0971B874F0700F6358C /* XYZCustomRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCustomRefreshControl.h; sourceTree = "<group>"; };
+		202BE0981B874F0700F6358C /* XYZCustomRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCustomRefreshControl.m; sourceTree = "<group>"; };
 		205F40341B83130400C86346 /* XYZDiscoveryContainScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDiscoveryContainScrollView.h; sourceTree = "<group>"; };
 		205F40351B83130400C86346 /* XYZDiscoveryContainScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDiscoveryContainScrollView.m; sourceTree = "<group>"; };
 		20980DE11B8207DA0099A72F /* answer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = answer.html; sourceTree = "<group>"; };
@@ -101,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202BE0931B8585DF00F6358C /* utilities+extendsions */ = {
+			isa = PBXGroup;
+			children = (
+				202BE0901B84F2CF00F6358C /* NSAttributedString+ExtendMethods.h */,
+				202BE0911B84F2CF00F6358C /* NSAttributedString+ExtendMethods.m */,
+				202BE0971B874F0700F6358C /* XYZCustomRefreshControl.h */,
+				202BE0981B874F0700F6358C /* XYZCustomRefreshControl.m */,
+			);
+			name = "utilities+extendsions";
+			sourceTree = "<group>";
+		};
 		20A9A8791B78A6B50036D43F = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +146,7 @@
 			children = (
 				20A9A8881B78A6B50036D43F /* AppDelegate.h */,
 				20A9A8891B78A6B50036D43F /* AppDelegate.m */,
+				202BE0931B8585DF00F6358C /* utilities+extendsions */,
 				20B9C5FF1B843BA600FCBA0B /* Home */,
 				20B9C5FE1B843B3500FCBA0B /* Dicovery */,
 				20B9C6001B843BFC00FCBA0B /* TopicAndPeople */,
@@ -186,6 +207,8 @@
 				20A9A8B91B790CE20036D43F /* XYZHomeTableViewController.m */,
 				20A9A8BB1B7911100036D43F /* XYZHomeTableViewCell.h */,
 				20A9A8BC1B7911100036D43F /* XYZHomeTableViewCell.m */,
+				202BE0941B8629C500F6358C /* XYZDeleteCellView.h */,
+				202BE0951B8629C500F6358C /* XYZDeleteCellView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -351,7 +374,10 @@
 				20B9C6041B843E9300FCBA0B /* XYZDiscoveryTableViewCell.m in Sources */,
 				20A9A8BA1B790CE20036D43F /* XYZHomeTableViewController.m in Sources */,
 				20A9A8871B78A6B50036D43F /* main.m in Sources */,
+				202BE0991B874F0700F6358C /* XYZCustomRefreshControl.m in Sources */,
+				202BE0921B84F2CF00F6358C /* NSAttributedString+ExtendMethods.m in Sources */,
 				205F40361B83130400C86346 /* XYZDiscoveryContainScrollView.m in Sources */,
+				202BE0961B8629C500F6358C /* XYZDeleteCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

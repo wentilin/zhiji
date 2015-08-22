@@ -22,24 +22,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="127"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="什么是演技？普通观众如何甄别演技优劣？" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1R-xx-tGe">
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="什么是演技？普通观众如何甄别演技优劣？" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1R-xx-tGe">
                                             <rect key="frame" x="8" y="37" width="546" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHq-Om-NvE">
+                                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHq-Om-NvE">
                                             <rect key="frame" x="8" y="8" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="电影"/>
+                                            <state key="normal" title="电影">
+                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
                                             <connections>
                                                 <action selector="showTopicOrPeople:" destination="yHT-Lw-fFB" eventType="touchUpInside" id="0Pc-zt-r23"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="话题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXT-iX-Phg">
-                                            <rect key="frame" x="63" y="8" width="34" height="21"/>
+                                            <rect key="frame" x="50" y="8" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-yR-9oJ">
@@ -55,27 +57,27 @@
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="172" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smL-cm-olK">
                                             <rect key="frame" x="8" y="77" width="27" height="21"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.36078431372549019" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同样是黑社会老大。在江湖告急里面，这个是有点逗比的黑社会老大任因九：在龙城岁月里面，这个是有勇无谋的黑社会老大大D：在黑金里面，这个是阴鸷霸气的黑社会老大周朝先：同样是大侠，在英雄" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFB-Nm-Iu9">
-                                            <rect key="frame" x="58" y="66" width="534" height="65"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同样是黑社会老大。在江湖告急里面，这个是有点逗比的黑社会老大任因九：在龙城岁月里面，这个是有勇无谋的黑社会老大大D：在黑金里面，这个是阴鸷霸气的黑社会老大周朝先：同样是大侠，在英雄" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFB-Nm-Iu9">
+                                            <rect key="frame" x="50" y="66" width="534" height="65"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mFB-Nm-Iu9" firstAttribute="height" secondItem="mHq-Om-NvE" secondAttribute="height" constant="44" id="CUd-rM-9tw"/>
-                                        <constraint firstItem="mFB-Nm-Iu9" firstAttribute="leading" secondItem="HXT-iX-Phg" secondAttribute="trailing" constant="-39" id="D2C-4P-Jaq"/>
+                                        <constraint firstItem="mFB-Nm-Iu9" firstAttribute="leading" secondItem="HXT-iX-Phg" secondAttribute="trailing" constant="-34" id="D2C-4P-Jaq"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="b1R-xx-tGe" secondAttribute="trailing" constant="38" id="DTB-C1-Vet"/>
                                         <constraint firstItem="mFB-Nm-Iu9" firstAttribute="top" secondItem="VeJ-fJ-TIq" secondAttribute="topMargin" constant="58" id="DjB-ib-pFV"/>
-                                        <constraint firstItem="mFB-Nm-Iu9" firstAttribute="leading" secondItem="smL-cm-olK" secondAttribute="trailing" constant="23" id="GhI-EY-kCB"/>
+                                        <constraint firstItem="mFB-Nm-Iu9" firstAttribute="leading" secondItem="smL-cm-olK" secondAttribute="trailing" constant="15" id="GhI-EY-kCB"/>
                                         <constraint firstItem="b1R-xx-tGe" firstAttribute="top" secondItem="mHq-Om-NvE" secondAttribute="bottom" constant="8" id="IFD-lQ-eY2"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="mFB-Nm-Iu9" secondAttribute="trailing" id="NQO-yp-DRU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mFB-Nm-Iu9" secondAttribute="trailing" constant="8" id="NQO-yp-DRU"/>
                                         <constraint firstAttribute="topMargin" secondItem="Av8-yR-9oJ" secondAttribute="top" id="PSm-be-YMk"/>
+                                        <constraint firstItem="HXT-iX-Phg" firstAttribute="height" secondItem="mHq-Om-NvE" secondAttribute="height" id="Qds-y3-vCp"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="b1R-xx-tGe" secondAttribute="leading" id="SK3-HW-l1z"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="mFB-Nm-Iu9" secondAttribute="bottom" constant="-12" id="TJb-eg-6zb"/>
                                         <constraint firstAttribute="topMargin" secondItem="mHq-Om-NvE" secondAttribute="top" id="Vbc-uA-niO"/>
@@ -85,7 +87,7 @@
                                         <constraint firstItem="HXT-iX-Phg" firstAttribute="top" secondItem="mHq-Om-NvE" secondAttribute="top" id="j3B-bs-JIi"/>
                                         <constraint firstItem="smL-cm-olK" firstAttribute="top" secondItem="b1R-xx-tGe" secondAttribute="bottom" constant="19" id="kFn-Vr-qc3"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Av8-yR-9oJ" secondAttribute="trailing" id="n9W-Fb-EhO"/>
-                                        <constraint firstItem="HXT-iX-Phg" firstAttribute="leading" secondItem="mHq-Om-NvE" secondAttribute="trailing" constant="21" id="uNN-W0-fE1"/>
+                                        <constraint firstItem="HXT-iX-Phg" firstAttribute="leading" secondItem="mHq-Om-NvE" secondAttribute="trailing" constant="8" id="uNN-W0-fE1"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="smL-cm-olK" secondAttribute="leading" id="xFX-t3-pdj"/>
                                         <constraint firstItem="b1R-xx-tGe" firstAttribute="leading" secondItem="mHq-Om-NvE" secondAttribute="trailing" constant="-34" id="ype-tv-cnd"/>
                                     </constraints>
@@ -179,7 +181,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="FQI-Tz-p0O" firstAttribute="top" secondItem="bPu-8i-4Z4" secondAttribute="top" id="Bl2-1F-YFH"/>
                                     <constraint firstItem="bPu-8i-4Z4" firstAttribute="centerX" secondItem="yan-Hw-IbR" secondAttribute="centerX" id="G5w-gP-KPb"/>
@@ -274,7 +276,7 @@
             </objects>
             <point key="canvasLocation" x="1103" y="1040"/>
         </scene>
-        <!--View Controller-->
+        <!--消息-->
         <scene sceneID="Hsy-bJ-6Dv">
             <objects>
                 <viewController id="3KL-Hd-F6X" sceneMemberID="viewController">
@@ -287,13 +289,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="f3h-pT-Nui"/>
+                    <navigationItem key="navigationItem" title="消息" id="f3h-pT-Nui"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvC-Dg-lbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1915" y="1701"/>
         </scene>
-        <!--View Controller-->
+        <!--个人-->
         <scene sceneID="t71-Sa-iyT">
             <objects>
                 <viewController id="1to-y9-esd" sceneMemberID="viewController">
@@ -306,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pai-We-aU8"/>
+                    <navigationItem key="navigationItem" title="个人" id="pai-We-aU8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tb4-t8-6qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

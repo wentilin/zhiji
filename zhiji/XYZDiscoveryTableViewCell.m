@@ -7,6 +7,7 @@
 //
 
 #import "XYZDiscoveryTableViewCell.h"
+#import "NSAttributedString+ExtendMethods.h"
 
 @implementation XYZDiscoveryTableViewCell
 
@@ -27,6 +28,7 @@
         
         arrowBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
         [arrowBtn setImage:[UIImage imageNamed:@"arrow_pic"] forState:UIControlStateNormal];
+        [arrowBtn addTarget:self action:@selector(arrowBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:arrowBtn];
         
         avatarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -63,11 +65,9 @@
     tmp.origin.x += 10.0;
     tmp.origin.y += 10.0;
     
-    NSAttributedString *attr = [[NSAttributedString alloc] initWithString:questionLabel.text attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0]}];
-    questionLabel.attributedText = attr;
-    
-    CGSize fontSize = [attr boundingRectWithSize:CGSizeMake(tmp.size.width, 42.0) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
-    questionLabel.frame = CGRectMake(10.0, 10.0, tmp.size.width-60.0, fontSize.height);
+    questionLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    CGSize qSize = [NSAttributedString fontSizeWithAttributeString:questionLabel.text font:questionLabel.font size:CGSizeMake(tmp.size.width-60.0, 42.0)];
+    questionLabel.frame = CGRectMake(10.0, 10.0, tmp.size.width-60.0, qSize.height);
     
     tmp.size.height = questionLabel.frame.size.height;
     tmp.size.width -= 10.0;
@@ -76,30 +76,34 @@
     arrowBtn.imageEdgeInsets = UIEdgeInsetsMake(0.0, left, 0.0, 0.0);
     arrowBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
-    avatarBtn.frame = CGRectMake(10.0, 60.0, 30.0, 30.0);
-    avatarBtn.layer.cornerRadius = 15.0;
     seperator.frame = CGRectMake(0.0, questionLabel.bounds.size.height+10.0+5.0, self.bounds.size.width, 1.0);
     
-    votesLabel.frame = CGRectMake(10.0, 95.0, 30.0, 30.0);
+    CGFloat avatarY = seperator.frame.origin.y + seperator.frame.size.height + 5.0;
+    avatarBtn.frame = CGRectMake(10.0, avatarY, 30.0, 30.0);
+    avatarBtn.layer.cornerRadius = 15.0;
+    
+    
+    CGFloat votesY = avatarBtn.frame.origin.y + avatarBtn.frame.size.height + 5.0;
+    votesLabel.frame = CGRectMake(10.0, votesY, 30.0, 30.0);
     votesLabel.layer.cornerRadius = 5.0;
     NSAttributedString *fontAttr = [[NSAttributedString alloc] initWithString:votesLabel.text attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [votesLabel sizeToFit];
     votesLabel.attributedText = fontAttr;
     
-    
-}
-
-- (CGSize)fontSizeWithString:(NSString *)str size:(CGSize)size attributes:(NSDictionary<NSString *, id> *)attributes {
-    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:str attributes:attributes];
-    CGSize sizeOfRect = [attrString boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
-    
-    return sizeOfRect;
+    CGFloat x = 10.0+votesLabel.bounds.size.width+10.0;
+    summaryAnswerLabel.font = [UIFont systemFontOfSize:17.0];
+    CGSize sSize = [NSAttributedString fontSizeWithAttributeString:summaryAnswerLabel.text font:summaryAnswerLabel.font size:CGSizeMake(tmp.size.width-x-10.0, 84.0)];
+    summaryAnswerLabel.frame = CGRectMake(x, avatarY, tmp.size.width-x-10.0, sSize.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)arrowBtnTapped:(UIButton *)sender {
+    NSLog(@"tapped");
 }
 
 @end

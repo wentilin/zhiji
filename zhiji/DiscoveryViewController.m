@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, TableViewOnDisplay) {
 - (void)initializeContainScrollView {
     CGRect frame = self.view.frame;
     frame.origin.y = self.cView.frame.origin.y + self.cView.frame.size.height;
+    frame.size.height -= (frame.origin.y + 30.0);
     self.containScrollView = [[XYZDiscoveryContainScrollView alloc] initWithFrame:frame];
     self.containScrollView.delegate = self;
     [self.containScrollView removeGestureRecognizer:self.containScrollView.panGestureRecognizer];
@@ -55,7 +56,7 @@ typedef NS_ENUM(NSInteger, TableViewOnDisplay) {
 }
 
 - (void)panToChoice: (UIPanGestureRecognizer *)gesture {
-    CGPoint translate = [gesture translationInView:self.view];
+    CGPoint translate = [gesture translationInView:self.containScrollView];
     //CGFloat velocityX = [gesture velocityInView:self.view].x;
     CGFloat x = MIN(maxX, MAX(minX, swipeViewFrame.origin.x + translate.x));
     CGRect frame = self.swipeView.frame;
@@ -100,10 +101,13 @@ typedef NS_ENUM(NSInteger, TableViewOnDisplay) {
     CGFloat centerY = self.swipeView.center.y;
     if ([title  isEqual: @"推荐"]) {
         self.swipeView.center = CGPointMake(self.tuijuanBtn.center.x, centerY);
+        [self.containScrollView setContentOffset:CGPointMake(0, 0) animated:true];
     } else if ([title isEqual: @"热门"]) {
         self.swipeView.center = CGPointMake(self.remenBtn.center.x, centerY);
+        [self.containScrollView setContentOffset:CGPointMake(self.view.frame.size.width, 0) animated:true];
     } else {
         self.swipeView.center = CGPointMake(self.shoucangBtn.center.x, centerY);
+        [self.containScrollView setContentOffset:CGPointMake(self.view.frame.size.width*2, 0) animated:true];
     }
 }
 

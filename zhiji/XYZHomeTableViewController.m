@@ -33,11 +33,15 @@
     datas = [NSMutableArray arrayWithObjects:@"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", @"1", nil];
     
     isLoading = false;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteCell:) name:@"DeleteCellNotifiction" object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)deleteCell:(NSNotification *)notifction {
+    XYZHomeTableViewCell *cell = (XYZHomeTableViewCell *)notifction.object;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    [datas removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
 }
 
 #pragma mark - Table view data source
@@ -51,11 +55,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     XYZHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QAQCell" forIndexPath:indexPath];
     
     if (cell == nil) {
         cell = [[XYZHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"QAQCell"];
     }
+    
     cell.questionLabel.text = @"什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?";
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:cell.questionLabel.text];
     NSRange range = NSMakeRange(0, attStr.length);
@@ -67,8 +73,8 @@
     cell.questionLabel.frame = CGRectMake(qRect.origin.x, qRect.origin.y
                                           , qRect.size.width, size.height);
     
-    cell.votesLabel.layer.borderWidth = 1.0f;
     cell.votesLabel.layer.cornerRadius = 5.0f;
+    cell.votesLabel.layer.backgroundColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1].CGColor;
     cell.votesLabel.clipsToBounds = true;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
