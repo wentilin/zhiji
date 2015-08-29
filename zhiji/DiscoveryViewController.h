@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define DISCOVERY_CELL_IDENTIFIER @"DiscoveryCellIdentifier"
+
 @class XYZDiscoveryContainScrollView;
 
-@interface DiscoveryViewController : UIViewController<UIScrollViewDelegate>
+@interface DiscoveryViewController : UIViewController<UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *tuijuanBtn;
 @property (weak, nonatomic) IBOutlet UIButton *remenBtn;
 @property (weak, nonatomic) IBOutlet UIButton *shoucangBtn;

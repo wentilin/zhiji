@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Home Table View Controller-->
         <scene sceneID="zYN-dM-Sjm">
@@ -15,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QAQCell" id="p7O-rO-CJv" customClass="XYZHomeTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="QAQCell" id="p7O-rO-CJv" customClass="XYZHomeTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="600" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p7O-rO-CJv" id="VeJ-fJ-TIq">
@@ -116,7 +121,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Tvw-Ry-Mg5">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CGb-zd-DOn">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜索问题、专栏或用户" minimumFontSize="17" clearButtonMode="whileEditing" id="CGb-zd-DOn">
                             <rect key="frame" x="20" y="7" width="526" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -145,7 +150,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPu-8i-4Z4">
-                                        <rect key="frame" x="283" y="15" width="34" height="33"/>
+                                        <rect key="frame" x="283" y="18" width="34" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="3LN-IK-Q5G"/>
                                             <constraint firstAttribute="width" constant="34" id="unl-Vn-Fyv"/>
@@ -156,28 +161,28 @@
                                             <action selector="choiceTapped:" destination="HIf-kx-sWM" eventType="touchUpInside" id="9Qx-CG-3TO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-5H-fAJ">
-                                        <rect key="frame" x="20" y="15" width="34" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="推荐"/>
-                                        <connections>
-                                            <action selector="choiceTapped:" destination="HIf-kx-sWM" eventType="touchUpInside" id="dDL-JD-5bV"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hml-fV-ejn">
-                                        <rect key="frame" x="20" y="55" width="34" height="5"/>
+                                        <rect key="frame" x="20" y="58" width="34" height="2"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="6M6-jG-whP"/>
-                                            <constraint firstAttribute="height" constant="5" id="Y9Z-U1-VBq"/>
+                                            <constraint firstAttribute="height" constant="2" id="Y9Z-U1-VBq"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQI-Tz-p0O">
-                                        <rect key="frame" x="546" y="15" width="34" height="33"/>
+                                        <rect key="frame" x="546" y="18" width="34" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="收藏"/>
                                         <connections>
                                             <action selector="choiceTapped:" destination="HIf-kx-sWM" eventType="touchUpInside" id="aXA-8v-7Gp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPr-5H-fAJ">
+                                        <rect key="frame" x="20" y="18" width="34" height="33"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="推荐"/>
+                                        <connections>
+                                            <action selector="choiceTapped:" destination="HIf-kx-sWM" eventType="touchUpInside" id="dDL-JD-5bV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -186,15 +191,22 @@
                                     <constraint firstItem="FQI-Tz-p0O" firstAttribute="top" secondItem="bPu-8i-4Z4" secondAttribute="top" id="Bl2-1F-YFH"/>
                                     <constraint firstItem="bPu-8i-4Z4" firstAttribute="centerX" secondItem="yan-Hw-IbR" secondAttribute="centerX" id="G5w-gP-KPb"/>
                                     <constraint firstItem="bPr-5H-fAJ" firstAttribute="height" secondItem="bPu-8i-4Z4" secondAttribute="height" id="JlH-Ac-vaN"/>
-                                    <constraint firstItem="bPu-8i-4Z4" firstAttribute="centerY" secondItem="yan-Hw-IbR" secondAttribute="centerY" constant="1.5" id="OwQ-Se-NDH"/>
+                                    <constraint firstItem="bPu-8i-4Z4" firstAttribute="centerY" secondItem="yan-Hw-IbR" secondAttribute="centerY" constant="4.5" id="OwQ-Se-NDH"/>
                                     <constraint firstItem="hml-fV-ejn" firstAttribute="leading" secondItem="bPr-5H-fAJ" secondAttribute="trailing" constant="-34" id="X4I-GQ-h5Q"/>
                                     <constraint firstAttribute="trailing" secondItem="FQI-Tz-p0O" secondAttribute="trailing" constant="20" id="bui-LC-xnC"/>
                                     <constraint firstItem="hml-fV-ejn" firstAttribute="top" secondItem="bPr-5H-fAJ" secondAttribute="bottom" constant="7" id="c1Q-JH-yRW"/>
                                     <constraint firstAttribute="height" constant="60" id="eDB-QO-bga"/>
                                     <constraint firstItem="bPr-5H-fAJ" firstAttribute="top" secondItem="bPu-8i-4Z4" secondAttribute="top" id="hhb-XD-BWF"/>
+                                    <constraint firstItem="hml-fV-ejn" firstAttribute="leading" secondItem="yan-Hw-IbR" secondAttribute="leading" constant="20" id="kpR-T1-kld"/>
                                     <constraint firstItem="bPr-5H-fAJ" firstAttribute="leading" secondItem="yan-Hw-IbR" secondAttribute="leading" constant="20" id="m91-ej-wXp" userLabel="Tuijuan Btn.leading = leading + 20"/>
                                     <constraint firstAttribute="bottom" secondItem="hml-fV-ejn" secondAttribute="bottom" id="vyI-mR-CnT"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="X4I-GQ-h5Q"/>
+                                        <exclude reference="c1Q-JH-yRW"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,7 +291,7 @@
         <!--消息-->
         <scene sceneID="Hsy-bJ-6Dv">
             <objects>
-                <viewController id="3KL-Hd-F6X" sceneMemberID="viewController">
+                <viewController id="3KL-Hd-F6X" customClass="XYZMessageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f1h-sl-G0Z"/>
                         <viewControllerLayoutGuide type="bottom" id="Tkz-dP-0Ae"/>
@@ -287,9 +299,68 @@
                     <view key="view" contentMode="scaleToFill" id="mbx-VB-fzb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-iT-64M">
+                                <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZR-JU-7UE">
+                                        <rect key="frame" x="266" y="13" width="68" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="赞与感谢"/>
+                                        <connections>
+                                            <action selector="choiceTapped:" destination="3KL-Hd-F6X" eventType="touchUpInside" id="FHJ-Ah-ZL8"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rBU-FF-Svr">
+                                        <rect key="frame" x="20" y="55" width="34" height="2"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTm-YQ-mUs">
+                                        <rect key="frame" x="20" y="15" width="34" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="通知"/>
+                                        <connections>
+                                            <action selector="choiceTapped:" destination="3KL-Hd-F6X" eventType="touchUpInside" id="3eo-CO-Zg7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOi-6w-sLJ">
+                                        <rect key="frame" x="546" y="15" width="34" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="私信"/>
+                                        <connections>
+                                            <action selector="choiceTapped:" destination="3KL-Hd-F6X" eventType="touchUpInside" id="4mA-Sh-dpW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cTm-YQ-mUs" firstAttribute="top" secondItem="OZR-JU-7UE" secondAttribute="top" constant="2" id="2Ln-fH-D2l"/>
+                                    <constraint firstAttribute="trailing" secondItem="FOi-6w-sLJ" secondAttribute="trailing" constant="20" id="870-97-CVW"/>
+                                    <constraint firstItem="FOi-6w-sLJ" firstAttribute="top" secondItem="OZR-JU-7UE" secondAttribute="top" constant="2" id="GH3-27-O4I"/>
+                                    <constraint firstItem="OZR-JU-7UE" firstAttribute="centerY" secondItem="6C1-iT-64M" secondAttribute="centerY" id="Jf0-0E-NG0"/>
+                                    <constraint firstAttribute="height" constant="60" id="LkG-IS-Ibg"/>
+                                    <constraint firstItem="cTm-YQ-mUs" firstAttribute="leading" secondItem="6C1-iT-64M" secondAttribute="leading" constant="20" id="bvY-aF-aX8"/>
+                                    <constraint firstItem="cTm-YQ-mUs" firstAttribute="height" secondItem="OZR-JU-7UE" secondAttribute="height" id="g9a-rP-gEY"/>
+                                    <constraint firstItem="FOi-6w-sLJ" firstAttribute="height" secondItem="OZR-JU-7UE" secondAttribute="height" id="lBI-at-YKJ"/>
+                                    <constraint firstItem="OZR-JU-7UE" firstAttribute="centerX" secondItem="6C1-iT-64M" secondAttribute="centerX" id="nsT-ye-2E0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6C1-iT-64M" firstAttribute="leading" secondItem="mbx-VB-fzb" secondAttribute="leadingMargin" constant="-20" id="XDJ-oL-60Z"/>
+                            <constraint firstItem="6C1-iT-64M" firstAttribute="top" secondItem="f1h-sl-G0Z" secondAttribute="bottom" id="bas-OV-MgM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6C1-iT-64M" secondAttribute="trailing" constant="-20" id="eoc-xO-YUc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="消息" id="f3h-pT-Nui"/>
+                    <connections>
+                        <outlet property="barView" destination="6C1-iT-64M" id="0aG-lG-G43"/>
+                        <outlet property="contactsBtn" destination="FOi-6w-sLJ" id="H6e-a0-LVf"/>
+                        <outlet property="notificationBtn" destination="cTm-YQ-mUs" id="hZh-U2-8TO"/>
+                        <outlet property="sliderView" destination="rBU-FF-Svr" id="iyt-nO-fiC"/>
+                        <outlet property="votesAndThanksBtn" destination="OZR-JU-7UE" id="ylE-gt-CYO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvC-Dg-lbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,7 +369,7 @@
         <!--个人-->
         <scene sceneID="t71-Sa-iyT">
             <objects>
-                <viewController id="1to-y9-esd" sceneMemberID="viewController">
+                <viewController id="1to-y9-esd" customClass="XYZIndividualViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="slZ-3e-IHp"/>
                         <viewControllerLayoutGuide type="bottom" id="30K-jp-Jxj"/>

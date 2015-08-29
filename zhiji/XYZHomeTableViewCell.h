@@ -15,6 +15,7 @@
     UISwipeGestureRecognizer *swipeDeleteCellGesture;
     XYZDeleteCellView *deleteView;
     BOOL canBeDeleted;
+    UITableView *cellContainer;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *topicOrPeopleBtn;
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) XYZDeleteCellView *deleteView;
 @property (assign, nonatomic) BOOL canBeDeleted;
 @property (readonly, nonatomic) UISwipeGestureRecognizer *swipeDeleteCellGesture;
+@property (strong, nonatomic) UITableView *cellContainer;
 
 - (void)initializeSubviews;
 

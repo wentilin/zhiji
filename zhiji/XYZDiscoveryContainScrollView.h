@@ -10,7 +10,7 @@
 
 
 
-@interface XYZDiscoveryContainScrollView : UIScrollView <UITableViewDataSource, UITableViewDelegate>
+@interface XYZDiscoveryContainScrollView : UIScrollView
 {
     UITableView *leftTableView;
     UITableView *middleTableView;

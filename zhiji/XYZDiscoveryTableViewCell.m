@@ -21,32 +21,31 @@
 - (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-
         questionLabel = [[UILabel alloc] init];
         questionLabel.numberOfLines = 2;
-        [self addSubview:questionLabel];
+        [self.contentView addSubview:questionLabel];
         
         arrowBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
         [arrowBtn setImage:[UIImage imageNamed:@"arrow_pic"] forState:UIControlStateNormal];
         [arrowBtn addTarget:self action:@selector(arrowBtnTapped:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:arrowBtn];
+        [self.contentView addSubview:arrowBtn];
         
         avatarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         avatarBtn.clipsToBounds = true;
         [avatarBtn setImage:[UIImage imageNamed:@"movie"] forState:UIControlStateNormal];
-        [self addSubview:avatarBtn];
+        [self.contentView addSubview:avatarBtn];
         
         seperator = [[UILabel alloc] init];
         seperator.backgroundColor = [UIColor lightGrayColor];
-        [self addSubview:seperator];
+        [self.contentView addSubview:seperator];
         
         votesLabel = [[UILabel alloc] init];
         votesLabel.layer.backgroundColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1].CGColor;
-        [self addSubview:votesLabel];
+        [self.contentView addSubview:votesLabel];
         
         summaryAnswerLabel = [[UILabel alloc] init];
         summaryAnswerLabel.numberOfLines = 4;
-        [self addSubview:summaryAnswerLabel];
+        [self.contentView addSubview:summaryAnswerLabel];
         
     }
     return self;
@@ -55,22 +54,21 @@
 - (void)setFrame:(CGRect)frame {
     frame.size.width -= 40.0;
     frame.origin.x += 20.0;
-    frame.size.height += 10.0;
+    frame.size.height -= 10.0;
     [super setFrame:frame];
-    
 }
 
 - (void)layoutSubviews {
-    CGRect tmp = self.bounds;
-    tmp.origin.x += 10.0;
-    tmp.origin.y += 10.0;
+    //CGRect tmp = self.bounds;
+    //tmp.origin.x += 10.0;
+    //tmp.origin.y += 10.0;
     
     questionLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    CGSize qSize = [NSAttributedString fontSizeWithAttributeString:questionLabel.text font:questionLabel.font size:CGSizeMake(tmp.size.width-60.0, 42.0)];
-    questionLabel.frame = CGRectMake(10.0, 10.0, tmp.size.width-60.0, qSize.height);
+    CGSize qSize = [NSAttributedString fontSizeWithAttributeString:questionLabel.text font:questionLabel.font size:CGSizeMake(self.bounds.size.width-60.0, 42.0)];
+    questionLabel.frame = CGRectMake(10.0, 10.0, self.bounds.size.width-40.0, qSize.height);
     
-    tmp.size.height = questionLabel.frame.size.height;
-    tmp.size.width -= 10.0;
+    CGRect tmp = questionLabel.frame;
+    tmp.size.width += 40.0;
     arrowBtn.frame = tmp;
     CGFloat left = arrowBtn.bounds.size.width - 60.0;
     arrowBtn.imageEdgeInsets = UIEdgeInsetsMake(0.0, left, 0.0, 0.0);
@@ -92,8 +90,8 @@
     
     CGFloat x = 10.0+votesLabel.bounds.size.width+10.0;
     summaryAnswerLabel.font = [UIFont systemFontOfSize:17.0];
-    CGSize sSize = [NSAttributedString fontSizeWithAttributeString:summaryAnswerLabel.text font:summaryAnswerLabel.font size:CGSizeMake(tmp.size.width-x-10.0, 84.0)];
-    summaryAnswerLabel.frame = CGRectMake(x, avatarY, tmp.size.width-x-10.0, sSize.height);
+    CGSize sSize = [NSAttributedString fontSizeWithAttributeString:summaryAnswerLabel.text font:summaryAnswerLabel.font size:CGSizeMake(self.bounds.size.width-x-10.0, 84.0)];
+    summaryAnswerLabel.frame = CGRectMake(x, avatarY, self.bounds.size.width-x-10.0, sSize.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -105,5 +103,11 @@
 - (void)arrowBtnTapped:(UIButton *)sender {
     NSLog(@"tapped");
 }
+
+//- (CGFloat)getHeightForCell {
+//    CGFloat height = questionLabel.bounds.size.height + seperator.bounds.size.height + summaryAnswerLabel.bounds.size.height;
+//        NSLog(@"%f", height);
+//    return height;
+//}
 
 @end

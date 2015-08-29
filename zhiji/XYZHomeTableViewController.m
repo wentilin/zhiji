@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.navigationController.tabBarController.tabBar.tintColor = [UIColor blueColor];
+    self.navigationController.tabBarController.tabBar.tintColor = [UIColor colorWithRed:0 green:0.478431 blue:1 alpha:1];
     self.navigationController.tabBarItem.image = [UIImage imageNamed:@"home_pic.png"];
     //self.navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"home_pic_seleted.png"];
     
@@ -61,6 +61,9 @@
     if (cell == nil) {
         cell = [[XYZHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"QAQCell"];
     }
+    
+    cell.cellContainer = tableView;
+    [tableView.panGestureRecognizer addTarget:cell action:@selector(deleteCell:)];
     
     cell.questionLabel.text = @"什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?什么是演技？普通观众如何甄别演技优劣?普通观众如何甄别演技优劣?";
     NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:cell.questionLabel.text];
@@ -120,6 +123,10 @@
 - (IBAction)showTopicOrPeople:(id)sender {
     XYZTopicViewController *topic = [[XYZTopicViewController alloc] init];
     [self.navigationController pushViewController:topic animated:true];
+}
+
+- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+    [self.tableView reloadData];
 }
 
 @end

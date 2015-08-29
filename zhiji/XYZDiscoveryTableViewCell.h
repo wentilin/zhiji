@@ -25,4 +25,6 @@
 @property (strong, nonatomic) UIButton *arrowBtn;
 @property (strong, nonatomic) UILabel *seperator;
 
+//- (CGFloat)getHeightForCell;
+
 @end
